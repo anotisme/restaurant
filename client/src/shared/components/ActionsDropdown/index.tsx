@@ -39,14 +39,14 @@ export default function ActionsDropdown({
         <DropdownMenuContent align="end">
           <DropdownMenuItem
             onClick={onView}
-            className="flex gap-2 hover:cursor-pointer"
+            className="flex gap-2 hover:cursor-pointer items-center"
           >
             <EyeOpenIcon /> View
           </DropdownMenuItem>
           {showEdit && (
             <DropdownMenuItem
               onClick={onEdit}
-              className="flex gap-2 hover:cursor-pointer"
+              className="flex gap-2 hover:cursor-pointer items-center"
             >
               <Pencil2Icon /> Edit
             </DropdownMenuItem>
@@ -54,7 +54,7 @@ export default function ActionsDropdown({
           {showDelete && (
             <DropdownMenuItem
               onClick={onDelete}
-              className="flex gap-2 hover:cursor-pointer"
+              className="flex gap-2 hover:cursor-pointer items-center"
             >
               <TrashIcon /> Delete
             </DropdownMenuItem>

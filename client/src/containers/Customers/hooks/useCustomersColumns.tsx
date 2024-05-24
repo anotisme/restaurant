@@ -78,8 +78,7 @@ export default function useCustomersColumns() {
     {
       id: "actions",
       enableHiding: false,
-      cell: ({ row }) => {
-        console.log("row", row);
+      cell: () => {
         return (
           <ActionsDropdown
             onDelete={() => null}

@@ -9,5 +9,5 @@ import { Payment } from "../interfaces";
 export function OrdersList() {
   const columns = useOrdersColumns();
 
-  return <TableUI<Payment> columns={columns} data={data} />;
+  return <TableUI<Payment> columns={columns} dataSource={data} />;
 }
