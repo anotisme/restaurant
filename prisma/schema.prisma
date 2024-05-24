@@ -9,6 +9,38 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model Users {
+  id          String   @id @default(uuid())
+  name        String   @db.VarChar(255)
+  email       String   @unique(map: "Users_email_key")
+  password    String   @db.VarChar(255)
+  isActive   Boolean? @default(false)
+  phoneNumber String   @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+}
+
+model Customers {
+  id          String   @id @default(uuid())
+  name        String   @db.VarChar(255)
+  email       String   @unique(map: "Customers_email_key")
+  description String?  @db.VarChar(255)
+  isActive   Boolean? @default(false)
+  address     String   @db.VarChar(255)
+  phoneNumber String   @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+}
+
+model Orders {
+  id          String   @id @default(uuid())
+  name        String   @db.VarChar(255)
+  avatar      String?  @db.VarChar(255)
+  description String?  @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
 }
